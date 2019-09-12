@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ZefGFX</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <style>
+        body {
+            margin:0;
+        }
+
+        #view{
+            display:block;
+            margin:auto;
+            margin-top:50px;
+        }
+
+        .body2 {
+            width:50%;
+            display:block;
+            margin:auto;
+        }
+    </style>
+    <body>
+        <div class = "body2">
+            <input style="position:fixed" type="file" id="myFile">
+            <canvas id="view" onmousewheel="m_zoom(event)" onmousedown="mouse_down(event)" onmouseup="mouse_up(event)" onmousemove="mouse_move(event)"></canvas>
+            <script src=js/vectors.js type="text/javascript"></script>
+            <script src=js/mat.js type="text/javascript"></script>
+            <script src=js/mesh_loader.js type="text/javascript"></script>
+            <script src=js/camera.js type="text/javascript"></script>
+            <script src=js/input_handler.js type="text/javascript"></script>
+            <script src=js/viewport.js type="text/javascript"></script>
+            <script src=js/engine.js type="text/javascript"></script>
+        </div>
+    </body>
+</html>
