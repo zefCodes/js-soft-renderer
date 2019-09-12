@@ -68,9 +68,13 @@ function device(ctx,width,height,viewport) {
         var mesh = model_loader.load_model(loaded_model)
         this.meshes.push(mesh)
     }
+	
+	this.clear_mesh= function() {
+		this.meshes=[]
+	}
 
     this.setup = function() {
-        this.camera.set_tz(10)
+        this.camera.set_tz(200)
     }
 
     this.present = function () {
@@ -277,6 +281,7 @@ function render_loop() {
 
 function run_engine(){
     display.setup()
+	display.load_mesh($("#init_mesh").text())
     requestAnimationFrame(render_loop);
 }
 
@@ -288,6 +293,7 @@ function readFile(evt) {
    var reader = new FileReader();
    reader.onload = function(event) {
         var loaded_model = event.target.result
+		display.clear_mesh()
         display.load_mesh(loaded_model)
    }
    reader.readAsText(file)
